@@ -1,0 +1,7 @@
+isme user post likh payenge
+register and login banana hai 
+logout krna hai  
+users create krne hai 
+post create krna hai 
+post like krna hai 
+post delete 

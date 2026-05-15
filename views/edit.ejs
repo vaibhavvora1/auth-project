@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="w-full h-screen bg-gradient-to-r from-blue-800 to-cyan-500 text-white p-10"
+    >
+      <h2 class="font-bold text-xl">Edit Post</h2>
+      <form action="/update/<%= post._id%>" method="POST" class="mt-10">
+        <div class="mb-4">
+          <label for="title" class="block text-gray-300 font-bold mb-2">
+            Post Title
+          </label>
+          <input
+            type="text"
+            id="title"
+            name="updatedtitle"
+            class="bg-gray-700 text-white placeholder:text-gray-500 border border-gray-500 rounded py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 outline-none"
+            required
+            value="<%= post.title %>"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="content" class="block text-gray-300 font-bold mb-2">
+            Post Content
+          </label>
+          <textarea
+            id="content"
+            name="content"
+            rows="4"
+            cols="50"
+            class="bg-gray-700 text-white placeholder:text-gray-500 border border-gray-500 rounded py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none outline-none"
+          >
+ <%=post.content %>
+          </textarea>
+        </div>
+        <button
+          type="submit"
+          class="bg-yellow-500 hover:bg-yellow-700 text-black font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          Edit post
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

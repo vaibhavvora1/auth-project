@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "DM Sans", sans-serif;
+      }
+      h1,
+      h2,
+      label {
+        font-family: "Playfair Display", serif;
+      }
+
+      .glass {
+        background: rgba(255, 255, 255, 0.07);
+        backdrop-filter: blur(18px);
+        border: 1px solid rgba(255, 255, 255, 0.13);
+      }
+
+      .orb1,
+      .orb2 {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.3;
+      }
+
+      .orb1 {
+        width: 280px;
+        height: 280px;
+        background: radial-gradient(circle, #f97316, #ec4899, transparent);
+        top: -60px;
+        left: -60px;
+      }
+
+      .orb2 {
+        width: 240px;
+        height: 240px;
+        background: radial-gradient(circle, #6366f1, #06b6d4, transparent);
+        bottom: -50px;
+        right: -50px;
+      }
+
+      @media (min-width: 640px) {
+        .orb1 {
+          width: 380px;
+          height: 380px;
+        }
+        .orb2 {
+          width: 320px;
+          height: 320px;
+        }
+      }
+
+      .input-field {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: #f1f5f9;
+      }
+
+      .input-field:focus {
+        outline: none;
+        border-color: #f97316;
+        box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+      }
+
+      .btn-login {
+        background: linear-gradient(135deg, #f97316, #ec4899);
+        box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
+      }
+
+      .btn-login:hover {
+        transform: translateY(-1px);
+      }
+    </style>
+  </head>
+
+  <body
+    class="min-h-screen flex items-center justify-center bg-[#0a0a0f] relative px-4 sm:px-6"
+  >
+    <!-- Orbs -->
+    <div class="orb1"></div>
+    <div class="orb2"></div>
+
+    <!-- Card -->
+    <div
+      class="glass w-full max-w-sm sm:max-w-md rounded-2xl sm:rounded-3xl p-6 sm:p-10 z-10 shadow-2xl"
+    >
+      <!-- Logo -->
+      <div class="flex justify-center mb-6 sm:mb-8">
+        <div
+          class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center bg-gradient-to-br from-orange-500 to-pink-500"
+        >
+          <svg
+            class="w-6 h-6 sm:w-7 sm:h-7 text-white"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15.75 6a3.75 3.75 0 1 1-7.5 0M4.5 20a7.5 7.5 0 0 1 15 0"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Heading -->
+      <h2 class="text-2xl sm:text-3xl font-bold text-white text-center">
+        Welcome back
+      </h2>
+
+      <p class="text-center text-xs sm:text-sm text-white/40 mt-1 mb-6 sm:mb-8">
+        Sign in to continue your journey
+      </p>
+
+      <!-- Form -->
+      <form method="post" action="/login" class="space-y-4 sm:space-y-5">
+        <!-- Email -->
+        <div>
+          <label class="text-xs uppercase text-white/50 mb-2 block"
+            >Email</label
+          >
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            class="input-field w-full rounded-lg px-4 py-2.5 sm:py-3 text-sm"
+          />
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label class="text-xs uppercase text-white/50 mb-2 block"
+            >Password</label
+          >
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            class="input-field w-full rounded-lg px-4 py-2.5 sm:py-3 text-sm"
+          />
+        </div>
+
+        <!-- Button -->
+        <button
+          type="submit"
+          class="btn-login w-full py-3 rounded-lg text-white font-semibold text-sm mt-2"
+        >
+          Sign In
+        </button>
+      </form>
+
+      <!-- Footer -->
+      <p class="text-center text-xs sm:text-sm text-white/40 mt-6">
+        Don't have an account?
+        <a href="/" class="text-orange-400 font-semibold">Create one</a>
+      </p>
+    </div>
+  </body>
+</html>
